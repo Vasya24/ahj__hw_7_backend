@@ -1,0 +1,24 @@
+{
+  "name": "ahj__hw_7_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vasya24/ahj__hw_7_backend.git"
+  },
+  "author": "Vasya24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vasya24/ahj__hw_7_backend/issues"
+  },
+  "homepage": "https://github.com/Vasya24/ahj__hw_7_backend#readme",
+  "dependencies": {
+    "forever": "^3.0.2"
+  }
+}
