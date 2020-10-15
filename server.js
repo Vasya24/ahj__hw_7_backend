@@ -1,11 +1,11 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
-const koa = require('koa');
+const Koa = require('koa');
 const koaBody = require('koa-body');
 const koaStatic = require('koa-static');
 const uuid = require('uuid');
-const app = new koa();
+const app = new Koa();
 
 const public = path.join(__dirname, '/public');
 app.use(koaStatic(public));
