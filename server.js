@@ -46,7 +46,42 @@ app.use(async (ctx, next) => {
 app.use(koaBody({
     urlencoded: true,
     multipart: true
-}))
+}));
+
+const tickets = [
+    {
+        id: uuid.v4(),
+        name: 'Докрутить бэк',
+        description: 'Нужно довести до ума бэк',
+        status: false,
+        created: new Date()
+
+    },
+    {
+        id: uuid.v4(),
+        name: 'Прикрутить фронт',
+        description: 'Нужно довести до ума фронт',
+        status: false,
+        created: new Date()
+
+    }
+];
+
+app.use(async ctx => {
+    const { method } = ctx.request.querystring;
+
+    switch (method) {
+        case 'allTickets':
+            ctx.response.body = tickets;
+            return;
+        // TODO: обработка остальных методов
+
+        default:
+            ctx.response.body = tickets;
+            return;
+    }
+});
+
 
 const port  = process.env.PORT || 4242;
 http.createServer(app.callback()).listen(port)
