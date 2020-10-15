@@ -42,3 +42,11 @@ app.use(async (ctx, next) => {
           ctx.response.status = 204;
     }
 });
+
+app.use(koaBody({
+    urlencoded: true,
+    multipart: true
+}))
+
+const port  = process.env.PORT || 4242;
+http.createServer(app.callback()).listen(port)
