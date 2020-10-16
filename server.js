@@ -45,7 +45,9 @@ app.use(async (ctx, next) => {
 
 app.use(koaBody({
     urlencoded: true,
-    multipart: true
+    multipart: true,
+    text: true,
+    json: true
 }));
 
 const date = new Date();
@@ -81,10 +83,11 @@ class TicketFull {
     const { id, method, status } = ctx.request.query;
     const { editId, name, description } = ctx.request.body;
     let item;
-
+    console.log(ctx)
     switch (method) {
       case 'allTickets':
         ctx.response.body = tickets;
+        console.log(ctx)
         return;
       case 'createTicket':
         tickets.push(new TicketFull(name, description));
@@ -99,6 +102,7 @@ class TicketFull {
       case 'ticketById':
         const ticket = tickets.filter((item) => item.id === id);
         ctx.response.body = ticket[0].description;
+        console.log(method)
         return;
       case 'toggleStatus':
         item = tickets.findIndex((item) => item.id === id);
@@ -115,5 +119,5 @@ class TicketFull {
   });
 
 
-const port  = process.env.PORT || 4242;
+const port = process.env.PORT || 4242;
 http.createServer(app.callback()).listen(port)
