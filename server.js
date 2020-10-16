@@ -73,7 +73,7 @@ class TicketFull {
       this.name = name;
       this.description = description;
       this.status = false;
-      this.created = initDate();
+      this.created = date;
     }
   }
 
