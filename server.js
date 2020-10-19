@@ -43,15 +43,15 @@ app.use(async (ctx, next) => {
 
   let tickets = [{
     id: uuid.v4(),
-    name: 'Поменять краску в принтере, ком. 404',
-    description: 'Принтер HP LJ 1210, картриджи на складе',
+    name: 'Поесть',
+    description: 'Котлекту с пюрешкой',
     status: false,
     created: initDate()
   },
   {
     id: uuid.v4(),
-    name: 'Установить обновление КВ-ХХХ',
-    description: 'Вышло критическое обновление для Windows',
+    name: 'Поспать',
+    description: 'Минимум 8 часов!',
     status: false,
     created: initDate()
   }];
@@ -73,7 +73,7 @@ app.use(async (ctx, next) => {
     const year = date.getFullYear().toString().slice(2);
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    return `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year} ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    return `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year} ровно в ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
   }
 
   app.use(async (ctx) => {
