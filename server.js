@@ -86,7 +86,7 @@ class TicketFull {
     switch (method) {
       case 'allTickets':
         ctx.response.body = tickets;
-        console.log(method)
+        // console.log(method)
         return;
       case 'createTicket':
         tickets.push(new TicketFull(name, description));
@@ -97,7 +97,7 @@ class TicketFull {
           tickets[item].name = name;
           tickets[item].description = description;
           ctx.response.body = 'ok';
-          console.log(method)
+          // console.log(method)
           return;
       case 'ticketById':
         const ticket = tickets.filter((item) => item.id === id);
