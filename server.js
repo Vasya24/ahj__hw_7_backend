@@ -70,7 +70,7 @@ app.use(async (ctx, next) => {
     const date = new Date();
     const day = date.getDate();
     const month = date.getMonth();
-    const year = date.getFullYear().toString().slice(2);
+    const year = date.getFullYear();
     const hours = date.getHours();
     const minutes = date.getMinutes();
     return `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year} ровно в ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
